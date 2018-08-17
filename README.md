@@ -8,6 +8,7 @@ LetraX is a simple bash script using Ncurses interface which is built on top of 
 
 ## Screenshots
 
+
 ## Disclaimer
 All songs' lyrics are pulled from [AZLyrics](https://www.azlyrics.com) and AZLyrics are the copyright owner and holder of the lyrics and search results. Your search queries will be directed to AZLyrics site. LetraX only provides a way for console/terminal enthusiasts to easily search lyrics without launching browsers. LetraX neither stores any data in any forms in users' computers nor other places and the lyrics pulled from AZLyrics are neither stored nor cached anywhere.
 
