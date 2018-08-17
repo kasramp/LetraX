@@ -7,7 +7,15 @@ LetraX is a simple bash script using Ncurses interface which is built on top of 
 - html-xml-utils (hxnormalize, hxselect)
 
 ## Screenshots
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4501120/44274686-0aa69d00-a243-11e8-8ae8-f2d9637c3514.jpg" alt="search" height="40%" width="50%"/>
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4501120/44275331-bc929900-a244-11e8-89fd-4c59276a25d7.png" alt="search-result" height="40%" width="50%"/>
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4501120/44275398-ea77dd80-a244-11e8-817e-57f60a5ad1ce.png" alt="lyrics" height="40%" width="50%"/>
+</p>
 
 ## Disclaimer
 All songs' lyrics are pulled from [AZLyrics](https://www.azlyrics.com) and AZLyrics are the copyright owner and holder of the lyrics and search results. Your search queries will be directed to AZLyrics site. LetraX only provides a way for console/terminal enthusiasts to easily search lyrics without launching browsers. LetraX neither stores any data in any forms in users' computers nor other places and the lyrics pulled from AZLyrics are neither stored nor cached anywhere.
