@@ -14,6 +14,11 @@ All songs' lyrics are pulled from [AZLyrics](https://www.azlyrics.com) and AZLyr
 ## Contact
 * kasra@madadipouya.com
 
+## Donate
+You can always support me:-)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C68PYFWLT332S)
+
 ## License
 <p>
 <img src="https://www.gnu.org/graphics/gplv3-127x51.png" alt="License"/>
