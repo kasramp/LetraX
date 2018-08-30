@@ -49,22 +49,27 @@ function letrax() {
 	elif [ $keypressed -eq 0 ]
 		then
 		song_index=$(( $song_index - 1 ))
-		result=$(curl -s "${links[$song_index]}" -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: en-GB,en;q=0.5' --compressed -H 'Cookie: __utma=190584827.2035041728.1477103053.1480301796.1534063828.4; __atuvc=1%7C44%2C0%7C45%2C0%7C46%2C0%7C47%2C1%7C48; __atssc=google%3B3; __utmz=190584827.1534063828.4.1.utmcsr=azlyrics.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmc=190584827' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Cache-Control: max-age=0' | hxnormalize -x | hxselect "div.col-xs-12:nth-child(2) > div:nth-child(8)")
-		lyrics=$(echo $result | sed 's/<div>//g' | sed 's/<\/div>//g' | sed 's/<br\/>/\n/g' | tr -s " ")
+		result=$(curl -s "${links[$song_index]}" -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Referer: https://search.azlyrics.com/search.php?q=man+of+the+year' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' | hxnormalize -x)
+		lyrics=$(echo $result | hxselect "div.col-xs-12:nth-child(2) > div:nth-child(8)")
+		if [ -z "$lyrics" ]
+		then
+			lyrics=$(echo $result | hxselect "div.col-xs-12:nth-child(2) > div:nth-child(10)")
+		fi
+		lyrics=$(echo $lyrics | sed 's/<div>//g' | sed 's/<\/div>//g' | sed 's/<br\/>/\n/g' | sed 's/<br>//g' | sed 's/<\/br>/\n/g' | tr -s " ")
 		title_index=$(( $song_index * 2 + 1 ))
 		dialog --keep-tite --backtitle $back_title --title ${options[$title_index]} --scrollbar --msgbox "$lyrics" 35 100
-		
-		keypressed=$?
-		if [ $keypressed -eq 255 ]
-			then
-			quit
-		elif [ $keypressed -eq 0 ]
-			then
-			letrax
-		fi
+	 	keypressed=$?
+	 	if [ $keypressed -eq 255 ]
+	 		then
+	 		quit
+	 	elif [ $keypressed -eq 0 ]
+	 		then
+	 		letrax
+	 	fi
 	fi
 	unset IFS
 }
+
 
 function quit() {
 	#reset
