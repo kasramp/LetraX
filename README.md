@@ -1,5 +1,5 @@
 # LetraX
-LetraX is a simple bash script using Ncurses interface which is built on top of [AZLyrics](https://www.azlyrics) to allow search and view lyrics in terminal from AZLyrics site.
+LetraX is a simple bash script using Ncurses interface which is built on top of [AZLyrics](https://www.azlyrics.com) to allow search and view lyrics in terminal from AZLyrics site.
 
 ## Dependencies
 - dialog
