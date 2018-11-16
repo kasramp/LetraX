@@ -87,10 +87,8 @@ function letrax() {
 	show_selected_lyrics
 }
 
-
 function quit() {
-	#reset
-	exit 0
+    kill -INT $$
 }
 
 main "$@"
